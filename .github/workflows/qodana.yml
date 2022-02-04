@@ -2,9 +2,12 @@ name: Qodana
 
 on:
   push:
-    branches: [ master ]
+    branches: [ qodana ]
     paths:
       - .github/workflows/qodana.yml
+  pull_request:
+    types: [ opened, synchronize ]
+    branches: [ qodana ]
 
 jobs:
   qodana:
@@ -16,12 +19,18 @@ jobs:
       - name: Qodana - Code Inspection
         uses: JetBrains/qodana-action@v1.0-eap
         with:
-          report-dir: docs # GitHub Pages 用に指定
+          report-dir: docs
+      - run: ls -l
+      - run: ls -l
+        working-directory: qodana
+      - run: ls -l
+        working-directory: docs
       - name: Count changes
         id: changes
         run: |
           git add -N docs
           echo "::set-output name=count::$(git diff --name-only docs | wc -l)"
+      - run: echo ${{ steps.changes.outputs.count }}
       - name: Deploy to GitHub Pages
         run: |
           git config user.name github-actions
