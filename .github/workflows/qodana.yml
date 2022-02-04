@@ -1,8 +1,8 @@
 name: Qodana
 
 on:
+  workflow_dispatch:
   push:
-    branches: [ qodana ]
     paths:
       - .github/workflows/qodana.yml
   pull_request:
