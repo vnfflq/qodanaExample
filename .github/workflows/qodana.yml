@@ -5,11 +5,11 @@ on:
   push:
     paths:
       - .github/workflows/qodana.yml
-  pull_request:
-    types: [ opened, synchronize ]
     branches:
-      - main
-      - feature/**
+      - master
+  pull_request:
+    branches:
+      - '**'
 
 jobs:
   qodana:
