@@ -2,9 +2,9 @@ name: Qodana
 
 on:
   push:
-    branches: [ qudanaSetting ]
+    branches: [ master ]
     paths:
-      - .qodana/qodana.yml
+      - .github/workflows/qodana.yml
 
 jobs:
   qodana:
