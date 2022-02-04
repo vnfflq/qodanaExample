@@ -9,7 +9,7 @@ on:
     types: [ opened, synchronize ]
     branches:
       - main
-      - 'feature/*'
+      - feature/**
 
 jobs:
   qodana:
