@@ -18,11 +18,8 @@ jobs:
       GRAZIE_PLUGIN: https://plugins.jetbrains.com/plugin/download?rel=true&updateId=152587
     steps:
       - uses: actions/checkout@v2
-      - name: 'Qodana - Code Inspection'
+      - name: 'Qodana Scan Java/Kotlin'
         uses: JetBrains/qodana-action@v4.2.2
-      - name: Deploy to Pages
-        uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qodana/report
-          destination_dir: ./
+          additional-volumes: |
+            ${{ runner.temp }}/grazie-pro:/opt/idea/plugins/grazie-pro
