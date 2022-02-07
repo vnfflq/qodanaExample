@@ -21,10 +21,17 @@ jobs:
       - run: |
           curl -L -o grazie-pro.zip "$GRAZIE_PLUGIN" && unzip grazie-pro.zip 
           mv grazie-pro ${{ runner.temp }}/grazie-pro && rm -f grazie-pro.zip
-      - name: 'Qodana Scan'
+      - name: 'Qodana Scan js'
         uses: JetBrains/qodana-action@v4.2.2
         with:
           linter: jetbrains/qodana-js
+          additional-volumes: |
+            ${{ runner.temp }}/grazie-pro:/opt/idea/plugins/grazie-pro
+          report-dir: docs
+      - name: 'Qodana Scan Java/Kotlin'
+        uses: JetBrains/qodana-action@v4.2.2
+        with:
+          linter: jetbrains/qodana-jvm-community
           additional-volumes: |
             ${{ runner.temp }}/grazie-pro:/opt/idea/plugins/grazie-pro
           report-dir: docs
