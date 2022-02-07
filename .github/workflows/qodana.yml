@@ -18,8 +18,11 @@ jobs:
       GRAZIE_PLUGIN: https://plugins.jetbrains.com/plugin/download?rel=true&updateId=152587
     steps:
       - uses: actions/checkout@v2
-      - name: 'Qodana - Code Inspection'
-        uses: JetBrains/qodana-action@v4.2.2
+      - name: 'Qodana Scan'
+        uses: JetBrains/qodana-action@v4.2.5
+      - uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: ${{ runner.temp }}/qodana/results/qodana.sarif.json
       - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
