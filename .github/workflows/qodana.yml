@@ -1,51 +1,31 @@
 name: Qodana
 
 on:
+  workflow_dispatch:
   push:
-    branches: [ qodana ]
     paths:
       - .github/workflows/qodana.yml
+    tags:
+      - 'pr-test-*'
   pull_request:
-    types: [ opened, synchronize ]
-    branches:
-      - main
-      - 'feature/*'
+    tags:
+      - 'pr-test-*'
 
 jobs:
   qodana:
     runs-on: ubuntu-latest
-
+    env:
+      GRAZIE_PLUGIN: https://plugins.jetbrains.com/plugin/download?rel=true&updateId=152587
     steps:
       - uses: actions/checkout@v2
-      - run: composer install
-      - name: Qodana Scan
-        uses: JetBrains/qodana-action@v1.0-eap
+      - name: 'Qodana Scan'
+        uses: JetBrains/qodana-action@v4.2.5
+      - uses: github/codeql-action/upload-sarif@v1
         with:
-          report-dir: docs
-      - run: ls -l
-      - run: ls -l
-        working-directory: qodana
-      - run: ls -l
-        working-directory: docs
-      - name: Count changes
-        id: changes
-        run: |
-          git add -N docs
-          echo "::set-output name=count::$(git diff --name-only docs | wc -l)"
-      - run: echo ${{ steps.changes.outputs.count }}
-      - name: Deploy to GitHub Pages
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add docs
-          git commit -m "Qodana report"
-          git push
-        if: steps.changes.outputs.count > 0
-      - uses: actions/upload-artifact@v2
+          sarif_file: ${{ runner.temp }}/qodana/results/qodana.sarif.json
+      - name: Deploy to Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: result
-          path: qodana
-      - uses: actions/upload-artifact@v2
-        with:
-          name: report
-          path: docs
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qodana/report
+          destination_dir: ./
