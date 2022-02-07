@@ -1,4 +1,4 @@
-name: Qodana
+name: TestQodana
 
 on:
   workflow_dispatch:
