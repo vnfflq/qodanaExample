@@ -20,9 +20,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@v4.2.5
-      - uses: github/codeql-action/upload-sarif@v1
         with:
-          sarif_file: ${{ runner.temp }}/qodana/results/qodana.sarif.json
+          report-dir: docs
+      - run: ls -l
+        working-directory: docs
       - name: Count changes
         id: changes
         run: |
