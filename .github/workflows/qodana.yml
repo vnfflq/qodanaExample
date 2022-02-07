@@ -5,11 +5,11 @@ on:
   push:
     paths:
       - .github/workflows/qodana.yml
-    branches:
-      - master
+    tags:
+      - 'pr-test-*'
   pull_request:
-    branches:
-      - '**'
+    tags:
+      - 'pr-test-*'
 
 jobs:
   qodana:
