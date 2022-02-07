@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: 'Qodana - Code Inspection'
-        uses: JetBrains/qodana-action@v2.0-eap
+        uses: JetBrains/qodana-action@v4.2.2
       - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
