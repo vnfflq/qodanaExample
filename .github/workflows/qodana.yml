@@ -18,6 +18,9 @@ jobs:
       GRAZIE_PLUGIN: https://plugins.jetbrains.com/plugin/download?rel=true&updateId=152587
     steps:
       - uses: actions/checkout@v2
+      - name: 'Create Report Dir'
+        run: |
+          mkdir docs
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@v4.2.5
         with:
