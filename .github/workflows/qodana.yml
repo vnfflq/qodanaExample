@@ -23,8 +23,6 @@ jobs:
       - uses: github/codeql-action/upload-sarif@v1
         with:
           sarif_file: ${{ runner.temp }}/qodana/results/qodana.sarif.json
-      - run: ls -l
-        working-directory: docs
       - name: Count changes
         id: changes
         run: |
