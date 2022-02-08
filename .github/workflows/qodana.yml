@@ -19,19 +19,14 @@ jobs:
       - name: 'Create Report Dir'
         run: |
           mkdir -p docs
-      - name: 'Qodana Scan'
-        uses: JetBrains/qodana-action@v4.2.5
-        with:
-          report-dir: docs
-      - run: ls -l
-        working-directory: docs
-      - name: Push
-        run: |
-          git config --global user.name github-actions
-          git config --global user.email github-actions@github.com
-          git add docs
-          git commit -m "Qodana report"
-          git push
+      stage: deploy
+        image:
+          name: jetbrains/qodana:2020.3-eap
+          entrypoint: [ "" ]
+        script:
+          - /opt/idea/bin/entrypoint --results-dir=$CI_PROJECT_DIR/qodana --save-report --report-dir=$CI_PROJECT_DIR/qodana/report
+          - ls -la
+          - mv docs/ public
       - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
