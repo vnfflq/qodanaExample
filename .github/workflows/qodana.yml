@@ -19,14 +19,8 @@ jobs:
       - name: 'Create Report Dir'
         run: |
           mkdir -p docs
-      stage: deploy
-        image:
-          name: jetbrains/qodana:2020.3-eap
-          entrypoint: [ "" ]
-        script:
-          - /opt/idea/bin/entrypoint --results-dir=$CI_PROJECT_DIR/qodana --save-report --report-dir=$CI_PROJECT_DIR/qodana/report
-          - ls -la
-          - mv docs/ public
+      - name: Qodana - Code Inspection
+        run: docker run -v ${GITHUB_WORKSPACE}:/data/project -v ${GITHUB_WORKSPACE}/qodana:/data/results JetBrains/qodana-action@v4.2.5 --save-report
       - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
