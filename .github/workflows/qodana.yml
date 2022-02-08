@@ -14,18 +14,19 @@ on:
 jobs:
   qodana:
     runs-on: ubuntu-latest
-    env:
-      GRAZIE_PLUGIN: https://plugins.jetbrains.com/plugin/download?rel=true&updateId=152587
     steps:
       - uses: actions/checkout@v2
-      - name: 'Qodana Scan'
+      - name: 'Create Report Dir'
+        run: |
+          mkdir -p docs
+      - name: Qodana - Code Inspection
         uses: JetBrains/qodana-action@v4.2.5
-      - uses: github/codeql-action/upload-sarif@v1
         with:
-          sarif_file: ${{ runner.temp }}/qodana/results/qodana.sarif.json
+          results-dir: ${{ github.workspace }}/docs
+          save-html-report: true
       - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qodana/report
-          destination_dir: ./
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         publish_dir: ./docs/report
+         destination_dir: ./
