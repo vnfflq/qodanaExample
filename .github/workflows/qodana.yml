@@ -20,7 +20,7 @@ jobs:
         run: |
           mkdir -p docs
       - name: Qodana - Code Inspection
-        run: docker run -v ${GITHUB_WORKSPACE}:/data/project -v ${GITHUB_WORKSPACE}/qodana:/data/results JetBrains/qodana-action@v4.2.5 --save-report
+        run: docker run -v ${GITHUB_WORKSPACE}:/data/project -v ${GITHUB_WORKSPACE}/qodana:/data/results jetBrains/qodana-action@v4.2.5 --save-report
       - name: Deploy to Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
