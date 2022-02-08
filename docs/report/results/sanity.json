@@ -1,0 +1,129 @@
+{"version":"3","listProblem":[{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: errorTest",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/kotlin/Main.kt",
+      "language": "kotlin",
+      "line": 3,
+      "offset": 4,
+      "length": 9,
+      "code": {
+        "startLine": 1,
+        "length": 9,
+        "offset": 64,
+        "surroundingCode": "fun main(args: Array<String>) {\n    println(\"Hello World!\")\n    errorTest\n    errordaaaaaa\n    testaa\n    // Try adding program arguments via Run/Debug configuration."
+      }
+    }
+  ],
+  "attributes": {
+    "module": "qodanaExample.main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-8818057641135233345"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: errordaaaaaa",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/kotlin/Main.kt",
+      "language": "kotlin",
+      "line": 4,
+      "offset": 4,
+      "length": 12,
+      "code": {
+        "startLine": 2,
+        "length": 12,
+        "offset": 46,
+        "surroundingCode": "    println(\"Hello World!\")\n    errorTest\n    errordaaaaaa\n    testaa\n    // Try adding program arguments via Run/Debug configuration.\n    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html."
+      }
+    }
+  ],
+  "attributes": {
+    "module": "qodanaExample.main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "4328227602196915879"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: testaa",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/kotlin/Main.kt",
+      "language": "kotlin",
+      "line": 5,
+      "offset": 4,
+      "length": 6,
+      "code": {
+        "startLine": 3,
+        "length": 6,
+        "offset": 35,
+        "surroundingCode": "    errorTest\n    errordaaaaaa\n    testaa\n    // Try adding program arguments via Run/Debug configuration.\n    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.\n    eeerere"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "qodanaExample.main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "5522637658943694907"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: eeerere",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "src/main/kotlin/Main.kt",
+      "language": "kotlin",
+      "line": 8,
+      "offset": 4,
+      "length": 7,
+      "code": {
+        "startLine": 6,
+        "length": 7,
+        "offset": 178,
+        "surroundingCode": "    // Try adding program arguments via Run/Debug configuration.\n    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.\n    eeerere\n    println(\"Program arguments: ${args.joinToString()}\")\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "qodanaExample.main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-8490053802329681642"
+}]}

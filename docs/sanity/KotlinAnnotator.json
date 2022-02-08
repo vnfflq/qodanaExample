@@ -1,0 +1,86 @@
+{"problems":[
+{
+  "file": "file://$PROJECT_DIR$/src/main/kotlin/Main.kt",
+  "line": 3,
+  "offset": 4,
+  "length": 9,
+  "module": "qodanaExample.main",
+  "package": "<default>",
+  "problem_class": {
+    "name": "Kotlin annotator",
+    "id": "KotlinAnnotator",
+    "severity": "ERROR",
+    "attribute_key": "ERRORS_ATTRIBUTES"
+  },
+  "entry_point": {
+    "TYPE": "method",
+    "FQNAME": "MainKt void main(java.lang.String[] args)"
+  },
+  "highlighted_element": "errorTest",
+  "language": "kotlin",
+  "description": "[UNRESOLVED_REFERENCE] Unresolved reference: errorTest"
+},
+{
+  "file": "file://$PROJECT_DIR$/src/main/kotlin/Main.kt",
+  "line": 4,
+  "offset": 4,
+  "length": 12,
+  "module": "qodanaExample.main",
+  "package": "<default>",
+  "problem_class": {
+    "name": "Kotlin annotator",
+    "id": "KotlinAnnotator",
+    "severity": "ERROR",
+    "attribute_key": "ERRORS_ATTRIBUTES"
+  },
+  "entry_point": {
+    "TYPE": "method",
+    "FQNAME": "MainKt void main(java.lang.String[] args)"
+  },
+  "highlighted_element": "errordaaaaaa",
+  "language": "kotlin",
+  "description": "[UNRESOLVED_REFERENCE] Unresolved reference: errordaaaaaa"
+},
+{
+  "file": "file://$PROJECT_DIR$/src/main/kotlin/Main.kt",
+  "line": 5,
+  "offset": 4,
+  "length": 6,
+  "module": "qodanaExample.main",
+  "package": "<default>",
+  "problem_class": {
+    "name": "Kotlin annotator",
+    "id": "KotlinAnnotator",
+    "severity": "ERROR",
+    "attribute_key": "ERRORS_ATTRIBUTES"
+  },
+  "entry_point": {
+    "TYPE": "method",
+    "FQNAME": "MainKt void main(java.lang.String[] args)"
+  },
+  "highlighted_element": "testaa",
+  "language": "kotlin",
+  "description": "[UNRESOLVED_REFERENCE] Unresolved reference: testaa"
+},
+{
+  "file": "file://$PROJECT_DIR$/src/main/kotlin/Main.kt",
+  "line": 8,
+  "offset": 4,
+  "length": 7,
+  "module": "qodanaExample.main",
+  "package": "<default>",
+  "problem_class": {
+    "name": "Kotlin annotator",
+    "id": "KotlinAnnotator",
+    "severity": "ERROR",
+    "attribute_key": "ERRORS_ATTRIBUTES"
+  },
+  "entry_point": {
+    "TYPE": "method",
+    "FQNAME": "MainKt void main(java.lang.String[] args)"
+  },
+  "highlighted_element": "eeerere",
+  "language": "kotlin",
+  "description": "[UNRESOLVED_REFERENCE] Unresolved reference: eeerere"
+}
+]}

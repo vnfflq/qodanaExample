@@ -1,0 +1,53 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "QDJVMC",
+          "fullName": "Qodana Community for JVM",
+          "version": "213.6674.74",
+          "rules": [],
+          "taxa": [],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        },
+        "extensions": []
+      },
+      "invocations": [
+        {
+          "exitCode": 0,
+          "toolExecutionNotifications": [
+            {
+              "message": {
+                "text": "Reporting from [] 'sanity' inspections was suspended due to high problems count."
+              },
+              "level": "error"
+            }
+          ],
+          "executionSuccessful": true
+        }
+      ],
+      "language": "en-US",
+      "results": [],
+      "automationDetails": {
+        "id": "qodanaExample - 2/8/22, 2:57 AM",
+        "guid": "8b62e7d2-050b-4215-85b5-a26a4a274814"
+      },
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ],
+      "properties": {
+        "deviceId": "200820300000000-6560-92cb-294c-61ac59ea8eee",
+        "tags": [
+          "deviceId"
+        ]
+      }
+    }
+  ]
+}
