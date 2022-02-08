@@ -25,15 +25,10 @@ jobs:
           report-dir: docs
       - run: ls -l
         working-directory: docs
-      - name: Count changes
-        id: changes
-        run: |
-          git add -N docs
-          echo "::set-output name=count::$(git diff --name-only docs | wc -l)"
       - name: Push
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
           git add docs
           git commit -m "Qodana report"
           git push
