@@ -16,9 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: 'Create Report Dir'
-        run: |
-          mkdir -p docs
       - name: Qodana - Code Inspection
         uses: JetBrains/qodana-action@v4.2.5
         with:
@@ -29,4 +26,4 @@ jobs:
         with:
          github_token: ${{ secrets.GITHUB_TOKEN }}
          publish_dir: ./docs/report
-         destination_dir: ./
+         destination_dir: ./docs
