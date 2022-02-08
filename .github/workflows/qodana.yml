@@ -22,7 +22,6 @@ jobs:
       - name: Qodana - Code Inspection
         uses: JetBrains/qodana-action@v4.2.5
         with:
-          linter: qodana-jvm-community
           results-dir: ${{ github.workspace }}/docs
           save-html-report: true
       - name: Deploy to Pages
