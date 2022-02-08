@@ -1,0 +1,16 @@
+{
+  "modules": [
+    {
+      "name": "qodanaExample",
+      "languageLevel": 15
+    },
+    {
+      "name": "qodanaExample.test",
+      "languageLevel": 15
+    },
+    {
+      "name": "qodanaExample.main",
+      "languageLevel": 15
+    }
+  ]
+}
